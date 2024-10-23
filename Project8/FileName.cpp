@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <Windows.h>
 
 using namespace std;
 
@@ -16,18 +17,19 @@ int main(void)
     while (1)
     {
         cin >> problem_num;
-        if (problem_num == "0") // 0 ÀÔ·ÂµÇ¸é Á¾·á
+        if (problem_num == "0") // 0 ì…ë ¥ë˜ë©´ ì¢…ë£Œ
             break;
         problem_nums.push_back(problem_num);
     }
 
     string url, cmd;
-    // °¢ ¹®Á¦ ¹øÈ£¿¡ ´ëÇÑ url ¿­±â
+    // ê° ë¬¸ì œ ë²ˆí˜¸ì— ëŒ€í•œ url ì—´ê¸°
     for (auto& num : problem_nums)
     {
         url = "https://www.acmicpc.net/status?from_mine=1&problem_id=" + num + "&user_id=" + user_id;
         cmd = "start chrome \"" + url + "\"";
         system(cmd.c_str());
+        Sleep(4000);
     }
     return 0;
 }
