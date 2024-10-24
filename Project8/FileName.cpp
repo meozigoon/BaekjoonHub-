@@ -29,7 +29,7 @@ int main(void)
         url = "https://www.acmicpc.net/status?from_mine=1&problem_id=" + num + "&user_id=" + user_id;
         cmd = "start chrome \"" + url + "\"";
         system(cmd.c_str());
-        Sleep(4000);
+        Sleep(5000);
     }
     return 0;
 }
